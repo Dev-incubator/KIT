@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Keep in Time</string>
+    <string name="meetings">Встречи</string>
+    <string name="create_meeting">Создать встречу</string>
+    <string name="enter_the_name">Введите имя</string>
+    <string name="contacts">Контакты</string>
+    <string name="tasks">Задачи</string>
+    <string name="create_task">Создать задачу</string>
+    <string name="select_time">Время</string>
+    <string name="choose_contact_from_phone">Выбрать контакт из телефона</string>
+</resources>
