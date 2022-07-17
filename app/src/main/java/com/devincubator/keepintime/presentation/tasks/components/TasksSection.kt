@@ -5,12 +5,13 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Edit
+import androidx.compose.material.icons.outlined.DriveFileRenameOutline
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -26,13 +27,16 @@ fun TasksSection() {
 
     Column(modifier = Modifier
         .fillMaxWidth()
+        .fillMaxHeight(1f)
         .background(colorResource(id = R.color.tasks_color))
     ) {
         Row(
-            verticalAlignment = Alignment.CenterVertically
+            modifier = Modifier.fillMaxWidth(1F),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Start
         ) {
             Icon(
-                imageVector = Icons.Outlined.Edit,
+                imageVector = Icons.Outlined.DriveFileRenameOutline,
                 contentDescription = "meetings",
                 modifier = Modifier
                     .size(40.dp)
@@ -40,11 +44,13 @@ fun TasksSection() {
             )
             Text(
                 text = stringResource(R.string.tasks),
-                fontSize = 23.sp,
-                fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily.SansSerif,
+                fontWeight = FontWeight.Light,
+                fontSize = 35.sp,
                 modifier = Modifier.padding(start = 10.dp)
             )
         }
+        
         EditTask(
             value = firstTaskDescription,
             onValueChange = { firstTaskDescription = it }

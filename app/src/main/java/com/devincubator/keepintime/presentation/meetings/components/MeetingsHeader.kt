@@ -5,12 +5,13 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ThumbUp
+import androidx.compose.material.icons.outlined.WavingHand
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -32,14 +33,13 @@ fun MeetingsHeader() {
     }
 
     Row(
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.Bottom,
+        horizontalArrangement = Arrangement.Start,
         modifier = Modifier
-            .padding(end = 10.dp)
-            .fillMaxWidth(1F)
+            .fillMaxWidth()
     ) {
         Icon(
-            imageVector = Icons.Outlined.ThumbUp,
+            imageVector = Icons.Outlined.WavingHand,
             contentDescription = "meetings",
             modifier = Modifier
                 .size(40.dp)
@@ -47,18 +47,21 @@ fun MeetingsHeader() {
         )
         Text(
             text = stringResource(R.string.meetings),
-            fontSize = 23.sp,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(start = 10.dp)
+            fontFamily = FontFamily.SansSerif,
+            fontWeight = FontWeight.Light,
+            fontSize = 35.sp,
+            modifier = Modifier.padding(start = 5.dp)
         )
         Text(
             text = getCurrentDate(),
-            fontWeight = FontWeight.Medium,
-            fontStyle = FontStyle.Normal,
+            fontFamily = FontFamily.SansSerif,
+            fontWeight = FontWeight.W300,
             fontSize = 17.sp,
-            modifier = Modifier.padding(start = 10.dp)
+            color = Color.Black,
+            modifier = Modifier.padding(start = 5.dp)
         )
         DatePickerView(updatedDate)
+
     }
 }
 

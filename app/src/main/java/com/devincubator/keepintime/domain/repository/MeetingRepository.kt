@@ -10,7 +10,7 @@ class MeetingRepository(private val meetingDao: MeetingDao) {
     private val calendar: Calendar = Calendar.getInstance()
 
     val getAllMeetings: LiveData<List<Meeting>> = meetingDao.getAllMeetings()
-    val getMeetingsOnToday: LiveData<List<Meeting>> = meetingDao.getMeetingsByDayOfMonth(calendar[Calendar.DAY_OF_MONTH])
+    val getMeetingsOnToday: LiveData<List<Meeting>> = meetingDao.getMeetingsByDayOfMonth(13)
 
     suspend fun getMeetingsByDayOfMonth(dayOfMonth: Int) {
         meetingDao.getMeetingsByDayOfMonth(dayOfMonth)

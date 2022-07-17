@@ -51,15 +51,18 @@ fun DatePickerView(
     Box(
         modifier = Modifier
             .wrapContentSize()
-            .padding(start = 20.dp)
+            .padding(start = 5.dp, end = 2.dp)
             .clickable { mDatePickerDialog.show() }
     ) {
         Icon(
             imageVector = Icons.Outlined.DateRange,
             contentDescription = "calendar",
             modifier = Modifier
-                .size(32.dp)
-                .background(Color.White, shape = RoundedCornerShape(10)),
+                .size(30.dp)
+                .background(
+                    Color.White,
+                    shape = RoundedCornerShape(10)
+                ),
         )
     }
 }

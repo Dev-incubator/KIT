@@ -31,8 +31,8 @@ fun SetMeetingDescription(
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
         modifier = Modifier
             .fillMaxWidth(0.7f)
-            .padding(start = 10.dp, end = 10.dp)
             .heightIn(30.dp)
+            .padding(start = 10.dp, end = 10.dp)
             .clickable { }
             .offset(y = (-10).dp),
         shape = RoundedCornerShape(18.dp),

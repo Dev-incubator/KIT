@@ -9,11 +9,12 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.NotStarted
+import androidx.compose.material.icons.outlined.NotStarted
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -29,7 +30,7 @@ fun MeetingDescriptionView(
 
     Row(verticalAlignment = Alignment.CenterVertically) {
         Icon(
-            imageVector = Icons.Filled.NotStarted,
+            imageVector = Icons.Outlined.NotStarted,
             contentDescription = "",
             tint = Color.Cyan,
             modifier = Modifier
@@ -39,11 +40,12 @@ fun MeetingDescriptionView(
         Text(
             text = meeting.description,
             modifier = Modifier
-                .fillMaxWidth(0.7f)
+                .fillMaxWidth(0.77f)
                 .padding(start = 10.dp, end = 10.dp, top = 5.dp)
                 .horizontalScroll(scrollState),
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Bold,
+            fontFamily = FontFamily.SansSerif,
+            fontWeight = FontWeight.W300,
+            fontSize = 28.sp,
             maxLines = 1
         )
     }

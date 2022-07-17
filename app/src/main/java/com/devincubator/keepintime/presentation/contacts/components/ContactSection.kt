@@ -6,7 +6,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Person
+import androidx.compose.material.icons.outlined.Group
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
@@ -33,10 +34,12 @@ fun ContactsSection() {
             .background(colorResource(id = R.color.contacts_color))
     ) {
         Row(
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Start,
+            modifier = Modifier.fillMaxWidth()
         ) {
             Icon(
-                imageVector = Icons.Outlined.Person,
+                imageVector = Icons.Outlined.Group,
                 contentDescription = "meetings",
                 modifier = Modifier
                     .size(40.dp)
@@ -44,13 +47,15 @@ fun ContactsSection() {
             )
             Text(
                 text = stringResource(R.string.contacts),
-                fontSize = 23.sp,
-                fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily.SansSerif,
+                fontWeight = FontWeight.Light,
+                fontSize = 35.sp,
                 modifier = Modifier.padding(start = 10.dp)
             )
         }
-
         ContactNameAndButton()
+
+        Spacer(modifier = Modifier.heightIn(2.dp))
 
         EditContactName(
             value = contactName,
@@ -72,12 +77,13 @@ fun ContactNameAndButton() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(38.dp),
-                verticalAlignment = Alignment.CenterVertically,
+                verticalAlignment = Alignment.Bottom,
             ) {
                 Text(
                     text = "Alexander",
-                    fontWeight = FontWeight.Medium,
-                    fontSize = 18.sp
+                    fontFamily = FontFamily.SansSerif,
+                    fontWeight = FontWeight.W300,
+                    fontSize = 25.sp,
                 )
                 Button(
                     onClick = { /*TODO*/ },
@@ -88,21 +94,25 @@ fun ContactNameAndButton() {
                     )
                 ) {
                     Text(text = "3 темы",
-                        fontSize = 15.sp,
+                        fontFamily = FontFamily.SansSerif,
+                        fontWeight = FontWeight.W400,
+                        fontSize = 16.sp,
                         color = Color.White
                     )
                 }
             }
+
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(38.dp),
-                verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = Alignment.Bottom
             ){
                 Text(
                     text = "Alexey",
-                    fontWeight = FontWeight.Medium,
-                    fontSize = 18.sp
+                    fontFamily = FontFamily.SansSerif,
+                    fontWeight = FontWeight.W300,
+                    fontSize = 25.sp,
                 )
                 Button(
                     onClick = { /*TODO*/ },
@@ -113,12 +123,15 @@ fun ContactNameAndButton() {
                     )
                 ) {
                     Text(text = "2 темы",
-                        fontSize = 15.sp,
+                        fontFamily = FontFamily.SansSerif,
+                        fontWeight = FontWeight.W400,
+                        fontSize = 16.sp,
                         color = Color.White
                     )
                 }
             }
         }
+
         Column(
            modifier = Modifier.wrapContentSize()
         ) {
@@ -126,12 +139,13 @@ fun ContactNameAndButton() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(38.dp),
-                verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = Alignment.Bottom
             ) {
                 Text(
                     text = "Balislau",
-                    fontWeight = FontWeight.Medium,
-                    fontSize = 18.sp
+                    fontFamily = FontFamily.SansSerif,
+                    fontWeight = FontWeight.W300,
+                    fontSize = 25.sp,
                 )
                 Button(
                     onClick = { /*TODO*/ },
@@ -142,21 +156,25 @@ fun ContactNameAndButton() {
                     )
                 ) {
                     Text(text = "4 темы",
-                        fontSize = 15.sp,
+                        fontFamily = FontFamily.SansSerif,
+                        fontWeight = FontWeight.W400,
+                        fontSize = 16.sp,
                         color = Color.White
                     )
                 }
             }
+
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(38.dp),
-                verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = Alignment.Bottom
             ){
                 Text(
                     text = "Matvey",
-                    fontWeight = FontWeight.Medium,
-                    fontSize = 18.sp
+                    fontFamily = FontFamily.SansSerif,
+                    fontWeight = FontWeight.W300,
+                    fontSize = 25.sp,
                 )
                 Button(
                     onClick = { /*TODO*/ },
@@ -167,7 +185,9 @@ fun ContactNameAndButton() {
                     )
                 ) {
                     Text(text = "2 темы",
-                        fontSize = 15.sp,
+                        fontFamily = FontFamily.SansSerif,
+                        fontWeight = FontWeight.W400,
+                        fontSize = 16.sp,
                         color = Color.White
                     )
                 }
